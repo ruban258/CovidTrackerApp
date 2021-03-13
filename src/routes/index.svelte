@@ -7,7 +7,7 @@
             
             const historicUS = await requests.historicUS();
 
-            console.log(historicUS);
+            
 
             return {usStats, historicUS};
 
@@ -23,6 +23,7 @@
     import CovidChart from '../components/CovidChart.svelte';
     import TableContainer from '../components/TableContainer.svelte';
     export let usStats;
+    export let historicUS;
     console.log(usStats, "usStats");
 </script>
 <svelte:head>
@@ -38,6 +39,6 @@
     </div>
 </div>
 <CovidStat {...usStats}></CovidStat>
-<CovidChart></CovidChart>
+<CovidChart historicData= {historicUS} title = "COVID US"></CovidChart>
 <TableContainer></TableContainer>
 
